@@ -77,8 +77,14 @@ class NeuralNetwork:
                 return i
         return -1
 
-    def costFunction(self):
-        return
+    def costFunction(self, answer: int):
+        sum = 0
+        for i in range(self.network[-1]):
+            if i + 1 == answer:
+                sum += (1 - self.network[-1])**2
+            else: 
+                sum += (0 - self.network[-1])**2
+        return sum/len(self.network[-1])
 
 def decimal_to_binary(number:int):
     binary = []
