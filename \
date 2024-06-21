@@ -1,0 +1,35 @@
+from typing import List
+import numpy as np
+
+class NeuralNetwork:
+
+    def __init__(self, layers, neurons, learningrate) -> None:
+        self.layers = layers
+        self.neurons = neurons
+        self.learningrate = learningrate
+
+        self.hiddenlayers = np.random.randn()
+
+
+        return
+
+    def feed_forward(self) -> None:
+        return
+    
+    def backpropagation(self) -> None:
+        return 
+
+    def adjust(self) -> None:
+        return
+    
+    def relu(self) -> None:
+        return
+
+    def deriv_relu(self) -> None:
+        return
+
+    def softmax(self) -> None:
+        return
+
+    def generate_batches(self) -> None:
+        return
