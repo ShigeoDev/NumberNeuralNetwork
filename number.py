@@ -5,19 +5,25 @@ class NeuralNetwork:
 
     neurons: int
     layers: int
+    learningrate: float
 
     network: list
     weights: list
     bias: list
 
-    def __init__(self, neurons: int, hiddenlayers: int):
+    def __init__(self, neurons: int, hiddenlayers: int, learningrate: float):
         self.neurons = neurons
         self.layers = hiddenlayers
+        self.learningrate = learningrate
 
         self.network = self.create_network()
         self.weights = self.create_weights()
         self.bias = self.create_bias()
 
+        return
+    
+    def input(self, input):
+        self.network[0] = decimal_to_binary(input)            
         return
 
     def create_network(self):
@@ -108,6 +114,11 @@ if __name__ == "__main__":
 
     neurons = 2
     layers = 2
-    neuralnetwork = NeuralNetwork(neurons, layers)
+    rate = 0.1
+    neuralnetwork = NeuralNetwork(neurons, layers, rate)
+    
+    neuralnetwork.input(3)
+    neuralnetwork.calculate_layers()
+    print(neuralnetwork.get_output())
 
 
